@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>E-Greeting Card</title>
+        <link rel = "stylesheet" href = "./style.css">
+
+        <link rel="stylesheet" href="./animate.css">
+    </head>
+    <body>
+
+        <div id = "card">
+
+            <div id = "containerText">
+                <span id = "animate"></span>
+            </div>
+            <div id = "card-content">
+            </div>
+            <div id = "fireworkcontainer">
+            <div id = "fireworktrigger"></div>
+            </div>
+        </div>
+
+        <script src="../p5.js"></script>
+        <script src = "./main.js"></script>
+        <script src = "./card.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <script>
+        var isFirstEncountered = false;
+        $(document).ready(function(){
+                $(document).mousemove(function(e){
+                  //console.log("its working");
+
+                $('#sparkler').css('left',e.pageX+"px");
+                $('#sparkler').css('top',e.pageY+"px");
+          });
+          $("#fireworktrigger").hover(function(e){
+              //console.log("its hovering");
+             $("#card-content").css('background', "url('./fireworks.gif') no-repeat");
+             $("#card-content").css('background-size', "100% 550px");
+             animate();
+          });
+
+      });
+      function animate(){
+          if(isFirstEncountered)return;
+          var toShow = ['Happy Diwali', 'To You and your family', 'from Jayanthi N Naik and family'];
+          var toAnimateDiv = document.getElementById("animate");
+          toAnimateDiv.innerHTML = toShow[0];
+          var id = setInterval(frame, 800);
+          var pos = 1;
+          //why i included jquery i still dont know maybe i found this code. so sorry for copying the code but i really didnt have time you know.nonethless ill try to write my own version for it.
+
+          function frame() {
+              if (pos == toShow.length) {
+
+              } else {
+                  /* code to change the element style */
+                  toAnimateDiv.innerHTML = toShow[pos++];
+                  pos %= toShow.length;
+              }
+          }
+          isFirstEncountered = true;
+  }
+      </script>
+    </body>
+</html>
