@@ -4,27 +4,41 @@
         <meta charset="utf-8">
         <title>E-Greeting Card</title>
         <link rel = "stylesheet" href = "./style.css">
-
-        <link rel="stylesheet" href="./animate.css">
     </head>
     <body>
-
         <div id = "card">
-
             <div id = "containerText">
                 <span id = "animate"></span>
             </div>
             <div id = "card-content">
             </div>
             <div id = "fireworkcontainer">
-            <div id = "fireworktrigger"></div>
+                <div id = "triggercontainer">
+                    <p style = "color : white"> hit the trigger</p>
+                <div id = "fireworktrigger"></div>
+                </div>
             </div>
         </div>
-
-        <script src="../p5.js"></script>
-        <script src = "./main.js"></script>
-        <script src = "./card.js"></script>
+        <div id = "fromTocontainer">
+            <div id = "From"> From : </div>
+            <div id = "To"> To : </div>
+        </div>
+        <div id = "share">
+            <div id = "shareFromToContainer">
+                <input id = "FromIn" placeholder = "From"> </iput>
+                <input id = "ToIn" placeholder = "To"> </input>
+            </div>
+            <div id = "shareButtonHolder">
+                <div id = "shareButton"> Share</div>
+            </div>
+        </div>
+        <div id = "copyright" style = "color : white">
+            Free to use. Created by Puneeth N Naik. Beta version
+        </div>
         <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+        <script src = "./app.js">
+        </script>
         <script>
         var isFirstEncountered = false;
         $(document).ready(function(){
@@ -44,7 +58,7 @@
       });
       function animate(){
           if(isFirstEncountered)return;
-          var toShow = ['Happy Diwali', 'To You and your family', 'from Jayanthi N Naik and family'];
+          var toShow = ['Happy Diwali', 'To You and your family',];
           var toAnimateDiv = document.getElementById("animate");
           toAnimateDiv.innerHTML = toShow[0];
           var id = setInterval(frame, 800);
@@ -61,7 +75,9 @@
               }
           }
           isFirstEncountered = true;
-  }
+      }
+      //firebase config
+
       </script>
     </body>
 </html>
