@@ -1,5 +1,6 @@
 //first ask for card id
 var id = prompt("Please enter the card id given by your loved one:");
+var CardId = document.getElementById('CardId');
 var config = {
     apiKey: "AIzaSyDprSbVayrn1UJe1a7YPd-anIOqIftLJIE",
     authDomain: "noteit-87e18.firebaseapp.com",
@@ -40,7 +41,7 @@ var config = {
               nextId++;
               dbRefObject.child('users/' + nextId.toString()).set(obj);
               dbRefObject.child('users/countOfUsers').set(nextId);
+              CardId.innerHTML = 'Your Card id is : ' + nextId.toString();
           });
-
       }
   });

@@ -53,7 +53,8 @@ body{
 #share{
     margin-top : 15px;
     height : 70px;
-
+    border : 1px solid white;
+    border-radius: 5px;
 }
 #shareButtonHolder{
     position : relative;
@@ -69,6 +70,8 @@ body{
     left : 50%;
     color : white;
     align : center;
+
+    margin-top : 5px;
 }
 #shareButton:hover{
     color : black;
@@ -77,6 +80,7 @@ body{
 #shareFromToContainer{
     border : 1px solid white;
     height : 25px;
+    margin-top : 5px;
 }
 #FromIn, #ToIn{
     float : left;
@@ -86,4 +90,7 @@ body{
     font-family : sans-serif;
     font-size : 18px;
     background-color: white;
+}
+#CardId{
+    margin-bottom : 2px;
 }
